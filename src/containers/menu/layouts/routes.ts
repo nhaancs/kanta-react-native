@@ -4,15 +4,11 @@ import {
 } from 'react-native';
 import {
   MenuIconAuth,
-  MenuIconArticles,
   MenuIconDashboards,
   MenuIconEcommerce,
-  MenuIconMessaging,
   MenuIconSocial,
   MenuIconAuthDark,
   MenuIconSocialDark,
-  MenuIconArticlesDark,
-  MenuIconMessagingDark,
   MenuIconDashboardsDark,
   MenuIconEcommerceDark,
 } from '@src/assets/icons';
@@ -42,26 +38,6 @@ export const routes: LayoutsContainerData[] = [
       }, theme);
     },
     route: 'Social',
-  },
-  {
-    title: 'Articles',
-    icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
-      return ThemeService.select({
-        'Eva Light': MenuIconArticles(style),
-        'Eva Dark': MenuIconArticlesDark(style),
-      }, theme);
-    },
-    route: 'Articles',
-  },
-  {
-    title: 'Messaging',
-    icon: (style: StyleProp<ImageStyle>, theme: ThemeKey) => {
-      return ThemeService.select({
-        'Eva Light': MenuIconMessaging(style),
-        'Eva Dark': MenuIconMessagingDark(style),
-      }, theme);
-    },
-    route: 'Messaging',
   },
   {
     title: 'Dashboards',

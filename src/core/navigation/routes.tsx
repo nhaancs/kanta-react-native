@@ -10,21 +10,9 @@ import {
 } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {
-  ComponentsContainer,
   LayoutsContainer,
   MenuContainer,
-  ThemesContainer,
 } from '@src/containers/menu';
-import {
-  Article1Container,
-  Article2Container,
-  Article3Container,
-  ArticleList1Container,
-  ArticleList2Container,
-  ArticleList3Container,
-  ArticleList4Container,
-  ArticlesContainer,
-} from '@src/containers/layouts/articles';
 import {
   AuthContainer,
   SignIn2Container,
@@ -38,13 +26,6 @@ import {
   ProductDetailsContainer,
   ProductsListContainer,
 } from '@src/containers/layouts/ecommerce';
-import {
-  Chat1Container,
-  Chat2Container,
-  Chat3Container,
-  ConversationsListContainer,
-  MessagingContainer,
-} from '@src/containers/layouts/messaging';
 
 import {
   Profile6Container,
@@ -53,25 +34,6 @@ import {
 } from '@src/containers/layouts/social';
 
 import {
-  AvatarContainer,
-  BottomNavigationContainer,
-  ButtonContainer,
-  ButtonGroupContainer,
-  CheckBoxContainer,
-  InputContainer,
-  ListContainer,
-  ModalContainer,
-  OverflowMenuContainer,
-  PopoverContainer,
-  RadioContainer,
-  TabViewContainer,
-  TextContainer,
-  ToggleContainer,
-  TooltipContainer,
-  TopNavigationContainer,
-} from '@src/containers/components';
-import {
-  ArticlesNavigationOptions,
   DashboardNavigationOptions,
   EcommerceNavigationOptions,
   MenuNavigationOptions,
@@ -96,44 +58,6 @@ const DashboardsNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp
   },
 };
 
-const MessagingNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Conversations List']: ConversationsListContainer,
-  ['Chat 1']: Chat1Container,
-  ['Chat 2']: Chat2Container,
-  ['Chat 3']: Chat3Container,
-};
-
-const ArticlesNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Article List 1']: {
-    screen: ArticleList1Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article List 2']: {
-    screen: ArticleList2Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article List 3']: {
-    screen: ArticleList3Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article List 4']: {
-    screen: ArticleList4Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article 1']: {
-    screen: Article1Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article 2']: {
-    screen: Article2Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-  ['Article 3']: {
-    screen: Article3Container,
-    navigationOptions: ArticlesNavigationOptions,
-  },
-};
-
 const SocialNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
   ['Profile 6']: {
     screen: Profile6Container,
@@ -149,46 +73,11 @@ const AuthNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
   ['Sign In 2']: SignIn2Container,
 };
 
-const ThemesNavigator: NavigationContainer = createStackNavigator(
-  {
-    ['Themes']: ThemesContainer,
-  }, {
-    defaultNavigationOptions: MenuNavigationOptions,
-  },
-);
-
-const ComponentsNavigator: NavigationContainer = createStackNavigator(
-  {
-    ['Components']: ComponentsContainer,
-    ['Button']: ButtonContainer,
-    ['Button Group']: ButtonGroupContainer,
-    ['CheckBox']: CheckBoxContainer,
-    ['Toggle']: ToggleContainer,
-    ['Radio']: RadioContainer,
-    ['Input']: InputContainer,
-    ['Text']: TextContainer,
-    ['Avatar']: AvatarContainer,
-    ['Tab View']: TabViewContainer,
-    ['Popover']: PopoverContainer,
-    ['Tooltip']: TooltipContainer,
-    ['Overflow Menu']: OverflowMenuContainer,
-    ['List']: ListContainer,
-    ['Top Navigation']: TopNavigationContainer,
-    ['Bottom Navigation']: BottomNavigationContainer,
-    ['Modal']: ModalContainer,
-  },
-  {
-    defaultNavigationOptions: MenuNavigationOptions,
-  },
-);
-
 const LayoutsNavigator: NavigationContainer = createStackNavigator(
   {
     ['Layouts']: LayoutsContainer,
     ['Auth']: AuthContainer,
     ['Social']: SocialContainer,
-    ['Articles']: ArticlesContainer,
-    ['Messaging']: MessagingContainer,
     ['Dashboards']: DashboardsContainer,
     ['Ecommerce']: EcommerceContainer,
   },
@@ -199,9 +88,9 @@ const LayoutsNavigator: NavigationContainer = createStackNavigator(
 
 const MenuNavigator = createBottomTabNavigator({
   ['Home']: LayoutsNavigator,
-  ['Category']: ComponentsNavigator,
-  ['Search']: ThemesNavigator,
-  ['Profile']: ThemesNavigator,
+  ['Category']: LayoutsNavigator,
+  ['Search']: LayoutsNavigator,
+  ['Profile']: LayoutsNavigator,
 }, {
   tabBarComponent: MenuContainer,
 });
@@ -210,8 +99,6 @@ const AppNavigator: NavigationContainer = createStackNavigator({
   ['Home']: MenuNavigator,
   ...AuthNavigationMap,
   ...SocialNavigationMap,
-  ...ArticlesNavigationMap,
-  ...MessagingNavigationMap,
   ...DashboardsNavigationMap,
   ...EcommerceNavigationMap,
 }, {
