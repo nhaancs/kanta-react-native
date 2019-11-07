@@ -9,12 +9,8 @@ import {
 import {
   BottomNavigation,
   BottomNavigationTab,
+  Icon,
 } from '@kitten/ui';
-import {
-  ColorPaletteIconOutline,
-  LayoutIconOutline,
-  StarIconOutline,
-} from '@src/assets/icons';
 import { themes } from '@src/core/themes';
 
 interface ComponentProps {
@@ -23,6 +19,22 @@ interface ComponentProps {
 }
 
 type Props = ThemedComponentProps & ComponentProps;
+
+const HomeIcon = (style) => (
+  <Icon {...style} name='home-outline'/>
+);
+
+const SearchIcon = (style) => (
+  <Icon {...style} name='search-outline'/>
+);
+
+const ListIcon = (style) => (
+  <Icon {...style} name='list-outline'/>
+);
+
+const PersonIcon = (style) => (
+  <Icon {...style} name='person-outline'/>
+);
 
 class MenuComponent extends React.Component<Props> {
 
@@ -37,20 +49,23 @@ class MenuComponent extends React.Component<Props> {
       <SafeAreaView style={themedStyle.safeAreaContainer}>
         <ThemeProvider theme={{...this.props.theme, ...themes['App Theme']}}>
           <BottomNavigation
-            appearance='noIndicator'
             selectedIndex={selectedIndex}
             onSelect={this.onTabSelect}>
             <BottomNavigationTab
-              title='Layouts'
-              icon={LayoutIconOutline}
+              title='Trang chủ'
+              icon={HomeIcon}
             />
             <BottomNavigationTab
-              title='Components'
-              icon={StarIconOutline}
+              title='Danh mục'
+              icon={ListIcon}
             />
             <BottomNavigationTab
-              title='Themes'
-              icon={ColorPaletteIconOutline}
+              title='Tìm kiếm'
+              icon={SearchIcon}
+            />
+            <BottomNavigationTab
+              title='Cá nhân'
+              icon={PersonIcon}
             />
           </BottomNavigation>
         </ThemeProvider>

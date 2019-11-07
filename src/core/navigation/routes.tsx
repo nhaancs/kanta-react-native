@@ -1,4 +1,3 @@
-import React from 'react';
 import { useScreens } from 'react-native-screens';
 import {
   createAppContainer,
@@ -28,32 +27,16 @@ import {
 } from '@src/containers/layouts/articles';
 import {
   AuthContainer,
-  ForgotPasswordContainer,
-  SignIn1Container,
   SignIn2Container,
-  SignIn3Container,
-  SignIn4Container,
-  SignIn5Container,
-  SignUp1Container,
-  SignUp2Container,
-  SignUp3Container,
-  SignUp4Container,
 } from '@src/containers/layouts/auth';
 import {
   DashboardsContainer,
   Trainings1Container,
-  Trainings2Container,
 } from '@src/containers/layouts/dashboards';
 import {
-  AddNewCardContainer,
-  BookDetailsContainer,
   EcommerceContainer,
-  MovieDetailsContainer,
-  PaymentContainer,
   ProductDetailsContainer,
   ProductsListContainer,
-  RentApartmentContainer,
-  ShoppingCartContainer,
 } from '@src/containers/layouts/ecommerce';
 import {
   Chat1Container,
@@ -62,22 +45,13 @@ import {
   ConversationsListContainer,
   MessagingContainer,
 } from '@src/containers/layouts/messaging';
+
 import {
-  Feed1Container,
-  Feed2Container,
-  Profile1Container,
-  Profile2Container,
-  Profile3Container,
-  Profile4Container,
-  Profile5Container,
   Profile6Container,
-  Profile7Container,
   ProfileSettings1Container,
-  ProfileSettings2Container,
-  ProfileSettings3Container,
-  SettingsContainer,
   SocialContainer,
 } from '@src/containers/layouts/social';
+
 import {
   AvatarContainer,
   BottomNavigationContainer,
@@ -105,36 +79,12 @@ import {
 } from './options';
 
 const EcommerceNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Add New Card']: {
-    screen: AddNewCardContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Payment']: {
-    screen: PaymentContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
   ['Products List']: {
     screen: ProductsListContainer,
     navigationOptions: EcommerceNavigationOptions,
   },
   ['Product Details']: {
     screen: ProductDetailsContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Shopping Cart']: {
-    screen: ShoppingCartContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Rent Apartment']: {
-    screen: RentApartmentContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Movie Details']: {
-    screen: MovieDetailsContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Book Details']: {
-    screen: BookDetailsContainer,
     navigationOptions: EcommerceNavigationOptions,
   },
 };
@@ -144,10 +94,6 @@ const DashboardsNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp
     screen: Trainings1Container,
     navigationOptions: DashboardNavigationOptions,
   },
-  ['Trainings 2']: {
-    screen: Trainings2Container,
-    navigationOptions: DashboardNavigationOptions,
-  },
 };
 
 const MessagingNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
@@ -155,10 +101,6 @@ const MessagingNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp>
   ['Chat 1']: Chat1Container,
   ['Chat 2']: Chat2Container,
   ['Chat 3']: Chat3Container,
-  ['Test Profile']: {
-    screen: Profile1Container,
-    navigationOptions: SocialNavigationOptions,
-  },
 };
 
 const ArticlesNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
@@ -193,70 +135,18 @@ const ArticlesNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> 
 };
 
 const SocialNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Profile 1']: {
-    screen: Profile1Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 2']: {
-    screen: Profile2Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 3']: {
-    screen: Profile3Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 4']: {
-    screen: Profile4Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 5']: {
-    screen: Profile5Container,
-  },
   ['Profile 6']: {
     screen: Profile6Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile 7']: {
-    screen: Profile7Container,
     navigationOptions: SocialNavigationOptions,
   },
   ['Profile Settings 1']: {
     screen: ProfileSettings1Container,
     navigationOptions: SocialNavigationOptions,
   },
-  ['Profile Settings 2']: {
-    screen: ProfileSettings2Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile Settings 3']: {
-    screen: ProfileSettings3Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Feed 1']: {
-    screen: Feed1Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Feed 2']: {
-    screen: Feed2Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Settings']: {
-    screen: SettingsContainer,
-    navigationOptions: SocialNavigationOptions,
-  },
 };
 
 const AuthNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Sign In 1']: SignIn1Container,
   ['Sign In 2']: SignIn2Container,
-  ['Sign In 3']: SignIn3Container,
-  ['Sign In 4']: SignIn4Container,
-  ['Sign In 5']: SignIn5Container,
-  ['Sign Up 1']: SignUp1Container,
-  ['Sign Up 2']: SignUp2Container,
-  ['Sign Up 3']: SignUp3Container,
-  ['Sign Up 4']: SignUp4Container,
-  ['Forgot Password']: ForgotPasswordContainer,
 };
 
 const ThemesNavigator: NavigationContainer = createStackNavigator(
@@ -308,9 +198,10 @@ const LayoutsNavigator: NavigationContainer = createStackNavigator(
 );
 
 const MenuNavigator = createBottomTabNavigator({
-  ['Layouts']: LayoutsNavigator,
-  ['Components']: ComponentsNavigator,
-  ['Themes']: ThemesNavigator,
+  ['Home']: LayoutsNavigator,
+  ['Category']: ComponentsNavigator,
+  ['Search']: ThemesNavigator,
+  ['Profile']: ThemesNavigator,
 }, {
   tabBarComponent: MenuContainer,
 });
