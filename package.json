@@ -54,7 +54,6 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "conventional-changelog-cli": "^2.0.21",
-    "husky": "^1.1.2",
     "rimraf": "^2.6.2",
     "scheduler": "^0.16.2",
     "tslint": "^5.12.1",

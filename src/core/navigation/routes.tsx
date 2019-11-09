@@ -34,7 +34,10 @@ import {
 // };
 
 const ProductNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['ProductDetail']: ProductDetailsContainer,
+  ['ProductDetail']: {
+    screen: ProductDetailsContainer,
+    navigationOptions: EcommerceNavigationOptions,
+  },
 };
 
 // const HomeNavigator: NavigationContainer = createStackNavigator(
