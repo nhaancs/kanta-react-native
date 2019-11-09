@@ -22,8 +22,6 @@ import {
 import {
   DashboardNavigationOptions,
   EcommerceNavigationOptions,
-  MenuNavigationOptions,
-  SocialNavigationOptions,
 } from './options';
 
 // const DashboardsNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
@@ -52,11 +50,13 @@ const ProductNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> =
 //   },
 // );
 
+const isLoggedIn = true;
+
 const MenuNavigator = createBottomTabNavigator({
   ['HomeScreen']: ProductsListContainer,
   ['CategoryScreen']: Profile6Container,
   ['SearchScreen']: ProfileSettings1Container,
-  ['ProfileScreen']: SignIn2Container,
+  ['ProfileScreen']: isLoggedIn ? ProfileSettings1Container : SignIn2Container,
 }, {
   tabBarComponent: MenuContainer,
 });

@@ -7,6 +7,7 @@ import {
 import {
   Button,
   Text,
+  Icon,
 } from '@kitten/ui';
 import {
   ScrollableAvoidKeyboard,
@@ -19,6 +20,13 @@ interface ComponentProps {
 }
 
 export type SignIn2Props = ThemedComponentProps & ComponentProps;
+
+let renderIcon = (style) => (
+  <Icon
+    name={'facebook'}
+    {...style}
+  />
+);
 
 class SignIn2Component extends React.Component<SignIn2Props> {
 
@@ -44,6 +52,7 @@ class SignIn2Component extends React.Component<SignIn2Props> {
           </Text>
         </View>
         <Button
+          icon={renderIcon}
           style={themedStyle.signInButton}
           textStyle={textStyle.button}
           size='giant'
