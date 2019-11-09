@@ -15,7 +15,10 @@ export class ProductsListContainer extends React.Component<NavigationStackScreen
   };
 
   private onProductPress = (product: Product) => {
-
+    this.props.navigation.navigate({
+      key: "ProductDetail",
+      routeName: "ProductDetail",
+    });
   };
 
   private onProductAddPress = (product: Product) => {

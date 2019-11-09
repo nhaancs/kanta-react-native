@@ -9,29 +9,15 @@ import {
   NavigationStackProp,
 } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { ProductsListContainer } from '../../containers/productsList/productsList.container';
+import { ProductDetailsContainer } from '../../containers/productDetails/productDetails.container';
+import { SignIn2Container } from '../../containers/signIn2/signIn2.container';
+import { ProfileSettings1Container } from '../../containers/profileSettings1/profileSettings1.container';
+import { Profile6Container } from '../../containers/profile6/profile6.container';
 import {
   LayoutsContainer,
   MenuContainer,
 } from '@src/containers/menu';
-import {
-  AuthContainer,
-  SignIn2Container,
-} from '@src/containers/layouts/auth';
-import {
-  DashboardsContainer,
-  Trainings1Container,
-} from '@src/containers/layouts/dashboards';
-import {
-  EcommerceContainer,
-  ProductDetailsContainer,
-  ProductsListContainer,
-} from '@src/containers/layouts/ecommerce';
-
-import {
-  Profile6Container,
-  ProfileSettings1Container,
-  SocialContainer,
-} from '@src/containers/layouts/social';
 
 import {
   DashboardNavigationOptions,
@@ -40,67 +26,41 @@ import {
   SocialNavigationOptions,
 } from './options';
 
-const EcommerceNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Products List']: {
-    screen: ProductsListContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
-  ['Product Details']: {
-    screen: ProductDetailsContainer,
-    navigationOptions: EcommerceNavigationOptions,
-  },
+// const DashboardsNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
+//   ['Trainings 1']: {
+//     screen: Trainings1Container,
+//     navigationOptions: DashboardNavigationOptions,
+//   },
+// };
+
+const ProductNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
+  ['ProductDetail']: ProductDetailsContainer,
 };
 
-const DashboardsNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Trainings 1']: {
-    screen: Trainings1Container,
-    navigationOptions: DashboardNavigationOptions,
-  },
-};
-
-const SocialNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Profile 6']: {
-    screen: Profile6Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-  ['Profile Settings 1']: {
-    screen: ProfileSettings1Container,
-    navigationOptions: SocialNavigationOptions,
-  },
-};
-
-const AuthNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> = {
-  ['Sign In 2']: SignIn2Container,
-};
-
-const LayoutsNavigator: NavigationContainer = createStackNavigator(
-  {
-    ['Layouts']: LayoutsContainer,
-    ['Auth']: AuthContainer,
-    ['Social']: SocialContainer,
-    ['Dashboards']: DashboardsContainer,
-    ['Ecommerce']: EcommerceContainer,
-  },
-  {
-    defaultNavigationOptions: MenuNavigationOptions,
-  },
-);
+// const HomeNavigator: NavigationContainer = createStackNavigator(
+//   {
+//     ['Layouts']: LayoutsContainer,
+//     ['Auth']: AuthContainer,
+//     ['Social']: SocialContainer,
+//     ['Dashboards']: DashboardsContainer,
+//   },
+//   {
+//     defaultNavigationOptions: MenuNavigationOptions,
+//   },
+// );
 
 const MenuNavigator = createBottomTabNavigator({
-  ['Home']: LayoutsNavigator,
-  ['Category']: LayoutsNavigator,
-  ['Search']: LayoutsNavigator,
-  ['Profile']: LayoutsNavigator,
+  ['HomeScreen']: ProductsListContainer,
+  ['CategoryScreen']: Profile6Container,
+  ['SearchScreen']: ProfileSettings1Container,
+  ['ProfileScreen']: SignIn2Container,
 }, {
   tabBarComponent: MenuContainer,
 });
 
 const AppNavigator: NavigationContainer = createStackNavigator({
   ['Home']: MenuNavigator,
-  ...AuthNavigationMap,
-  ...SocialNavigationMap,
-  ...DashboardsNavigationMap,
-  ...EcommerceNavigationMap,
+  ...ProductNavigationMap,
 }, {
   headerMode: 'screen',
   defaultNavigationOptions: {
