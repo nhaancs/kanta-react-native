@@ -9,47 +9,21 @@ import {
   Text,
 } from '@kitten/ui';
 import {
-  SignInForm2,
-  SignInForm2Data,
-} from '@src/components/auth';
-import {
   ScrollableAvoidKeyboard,
   textStyle,
 } from '@src/components/common';
 import { View } from 'react-native';
 
 interface ComponentProps {
-  onSignInPress: (formData: SignInForm2Data) => void;
-  onSignUpPress: () => void;
-  onForgotPasswordPress: () => void;
+  onSignInPress: () => void;
 }
 
 export type SignIn2Props = ThemedComponentProps & ComponentProps;
 
-interface State {
-  formData: SignInForm2Data | undefined;
-}
-
 class SignIn2Component extends React.Component<SignIn2Props> {
 
-  public state: State = {
-    formData: undefined,
-  };
-
   private onSignInButtonPress = () => {
-    this.props.onSignInPress(this.state.formData);
-  };
-
-  private onSignUpButtonPress = () => {
-    this.props.onSignUpPress();
-  };
-
-  private onForgotPasswordButtonPress = () => {
-    this.props.onForgotPasswordPress();
-  };
-
-  private onFormDataChange = (formData: SignInForm2Data) => {
-    this.setState({ formData });
+    this.props.onSignInPress();
   };
 
   public render(): React.ReactNode {
@@ -61,34 +35,20 @@ class SignIn2Component extends React.Component<SignIn2Props> {
           <Text
             style={themedStyle.helloLabel}
             category='h1'>
-            Hello
+            Xin chào
           </Text>
           <Text
             style={themedStyle.signInLabel}
             category='s1'>
-            Sign in to your account
+            Vui lòng đăng nhập vào tài khoản của bạn
           </Text>
         </View>
-        <SignInForm2
-          style={themedStyle.formContainer}
-          onForgotPasswordPress={this.onForgotPasswordButtonPress}
-          onDataChange={this.onFormDataChange}
-        />
         <Button
           style={themedStyle.signInButton}
           textStyle={textStyle.button}
           size='giant'
-          disabled={!this.state.formData}
           onPress={this.onSignInButtonPress}>
-          SIGN IN
-        </Button>
-        <Button
-          style={themedStyle.signUpButton}
-          textStyle={themedStyle.signUpText}
-          appearance='ghost'
-          activeOpacity={0.75}
-          onPress={this.onSignUpButtonPress}>
-          Don't have an account? Create
+          Đăng nhập với Facebook
         </Button>
       </ScrollableAvoidKeyboard>
     );
@@ -122,14 +82,10 @@ export const SignIn2 = withStyles(SignIn2Component, (theme: ThemeType) => {
       ...textStyle.subtitle,
     },
     signInButton: {
-      marginHorizontal: 16,
-    },
-    signUpButton: {
-      marginVertical: 12,
-    },
-    signUpText: {
-      color: theme['text-hint-color'],
-      ...textStyle.subtitle,
+      width: '80%',
+      bottom: 150,
+      alignSelf: 'center',
+      position: 'absolute',
     },
   });
 });
