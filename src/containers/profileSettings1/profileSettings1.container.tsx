@@ -3,6 +3,7 @@ import { NavigationStackScreenProps } from 'react-navigation-stack';
 import { Profile } from '@src/core/model';
 import { profile1 } from '@src/core/data/profile';
 import { ProfileSettings1 } from './profileSettings1.component';
+import { StorageHelper } from '../../core/utils/storage.helper';
 
 interface State {
   profile: Profile;
@@ -18,6 +19,7 @@ export class ProfileSettings1Container extends React.Component<NavigationStackSc
   };
 
   private onButtonPress = () => {
+    StorageHelper.set("USER_ID", "ABCXYZ")
     this.props.navigation.goBack();
   };
 

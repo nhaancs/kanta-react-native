@@ -14,6 +14,8 @@ import { ProductDetailsContainer } from '../../containers/productDetails/product
 import { SignIn2Container } from '../../containers/signIn2/signIn2.container';
 import { ProfileSettings1Container } from '../../containers/profileSettings1/profileSettings1.container';
 import { Profile6Container } from '../../containers/profile6/profile6.container';
+import { StorageHelper } from '../utils/storage.helper';
+import { Trainings1Container } from '../../containers/trainings1/trainings1.container';
 import {
   LayoutsContainer,
   MenuContainer,
@@ -50,13 +52,11 @@ const ProductNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> =
 //   },
 // );
 
-const isLoggedIn = true;
-
 const MenuNavigator = createBottomTabNavigator({
   ['HomeScreen']: ProductsListContainer,
-  ['CategoryScreen']: Profile6Container,
+  ['CategoryScreen']: Trainings1Container,
   ['SearchScreen']: ProfileSettings1Container,
-  ['ProfileScreen']: isLoggedIn ? ProfileSettings1Container : SignIn2Container,
+  ['ProfileScreen']: SignIn2Container,
 }, {
   tabBarComponent: MenuContainer,
 });
