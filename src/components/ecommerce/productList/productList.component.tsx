@@ -17,11 +17,15 @@ import {
   ProductListItemProps,
 } from './productListItem.component';
 
+import { textStyle } from '../../common/style';
+import { Text } from '@kitten/ui';
+
 // @ts-ignore (override `renderItem` prop)
 interface ComponentProps extends ListProps {
-  onItemAddPress: (index: number) => void;
-  onItemPress: (index: number) => void;
+  onItemAddPress: (product: Product) => void;
+  onItemPress: (product: Product) => void;
   renderItem?: (info: ListRenderItemInfo<Product>) => ListItemElement;
+  title: string;
 }
 
 export type ProductListProps = ThemedComponentProps & ComponentProps;
@@ -30,12 +34,12 @@ type ListItemElement = React.ReactElement<ProductListItemProps>;
 
 class ProductListComponent extends React.Component<ProductListProps> {
 
-  private onProductAddPress = (index: number) => {
-    this.props.onItemAddPress(index);
+  private onProductAddPress = (selectedProduct: Product) => {
+    this.props.onItemAddPress(selectedProduct);
   };
 
-  private onProductPress = (index: number) => {
-    this.props.onItemPress(index);
+  private onProductPress = (selectedProduct: Product) => {
+    this.props.onItemPress(selectedProduct);
   };
 
   private renderListItemElement = (item: Product): ListItemElement => {
@@ -45,10 +49,7 @@ class ProductListComponent extends React.Component<ProductListProps> {
       <ProductListItem
         style={themedStyle.item}
         activeOpacity={0.75}
-        image={item.photo.imageSource}
-        name={item.name}
-        type={item.type}
-        price={`${item.cost} ${item.currency}`}
+        product={item}
         onAddPress={this.onProductAddPress}
         onPress={this.onProductPress}
       />
@@ -63,8 +64,16 @@ class ProductListComponent extends React.Component<ProductListProps> {
     return React.cloneElement(listItemElement, { index });
   };
 
+  renderHeaderFn = (title: string) => {
+    return () =>  (
+      <Text
+        appearance='hint'
+        >{title}</Text>
+    );
+  };
+
   public render(): React.ReactNode {
-    const { contentContainerStyle, themedStyle, data, ...restProps } = this.props;
+    const { contentContainerStyle, themedStyle, data, title, ...restProps } = this.props;
 
     return (
       <List
@@ -73,17 +82,28 @@ class ProductListComponent extends React.Component<ProductListProps> {
         data={data}
         renderItem={this.renderItem}
         numColumns={2}
+        ListHeaderComponent={this.renderHeaderFn(title)}
       />
     );
   }
 }
 
 export const ProductList = withStyles(ProductListComponent, (theme: ThemeType) => ({
-  container: {},
   item: {
     flex: 1,
     marginHorizontal: 8,
     marginVertical: 8,
     backgroundColor: theme['background-basic-color-1'],
+  },
+  container: {
+    paddingVertical: 8,
+  },
+  pagerContainer: {
+    marginVertical: 8,
+  },
+  pagerLabel: {
+    marginVertical: 16,
+    paddingHorizontal: 16,
+    ...textStyle.paragraph,
   },
 }));

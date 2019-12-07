@@ -17,6 +17,8 @@ import {
 } from '@kitten/ui';
 import { textStyle } from '@src/components/common';
 import { CartIconOutline } from '@src/assets/icons';
+import { Product } from '../../../core/model/product.model';
+import { RemoteImage } from '../../../assets/images/type';
 
 interface ListDerivedProps {
   index?: number;
@@ -24,12 +26,9 @@ interface ListDerivedProps {
 
 // @ts-ignore
 interface ComponentProps extends ListDerivedProps, TouchableOpacityProps {
-  image: ImageSourcePropType;
-  name: string;
-  type: string;
-  price: string;
-  onAddPress: (index: number) => void;
-  onPress: (index: number) => void;
+  product: Product
+  onAddPress: (product: Product) => void;
+  onPress: (product: Product) => void;
 }
 
 export type ProductListItemProps = ThemedComponentProps & ComponentProps;
@@ -37,16 +36,16 @@ export type ProductListItemProps = ThemedComponentProps & ComponentProps;
 class ProductListItemComponent extends React.Component<ProductListItemProps> {
 
   private onPress = () => {
-    this.props.onPress(this.props.index);
+    this.props.onPress(this.props.product);
   };
 
   private onAddToBucket = () => {
-    this.props.onAddPress(this.props.index);
+    this.props.onAddPress(this.props.product);
   };
 
   public render(): React.ReactNode {
-    const { style, themedStyle, image, name, type, price, ...restProps } = this.props;
-
+    const { style, themedStyle, product, ...restProps } = this.props;
+    const image = new RemoteImage(product.image)
     return (
       <TouchableOpacity
         {...restProps}
@@ -54,27 +53,27 @@ class ProductListItemComponent extends React.Component<ProductListItemProps> {
         onPress={this.onPress}>
         <Image
           style={themedStyle.image}
-          source={image}
+          source={image.imageSource}
         />
         <View style={themedStyle.infoContainer}>
           <View>
             <Text
               style={themedStyle.nameLabel}
               category='s1'>
-              {name}
+              {product.name}
             </Text>
             <Text
               style={themedStyle.typeLabel}
               appearance='hint'
               category='c1'>
-              {type}
+              {product.categories_lv1_name}
             </Text>
           </View>
           <View style={themedStyle.priceContainer}>
             <Text
               style={themedStyle.costLabel}
               category='s1'>
-              {price}
+              {Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND'}).format(product.price)}
             </Text>
             <Button
               style={themedStyle.buyButton}

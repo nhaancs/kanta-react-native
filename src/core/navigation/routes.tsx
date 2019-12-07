@@ -9,18 +9,12 @@ import {
   NavigationStackProp,
 } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { ProductsListContainer } from '../../containers/productsList/productsList.container';
 import { ProductDetailsContainer } from '../../containers/productDetails/productDetails.container';
 import { SignIn2Container } from '../../containers/signIn2/signIn2.container';
 import { ProfileSettings1Container } from '../../containers/profileSettings1/profileSettings1.container';
-import { Profile6Container } from '../../containers/profile6/profile6.container';
-import { StorageHelper } from '../utils/storage.helper';
 import { Trainings1Container } from '../../containers/trainings1/trainings1.container';
-import {
-  LayoutsContainer,
-  MenuContainer,
-} from '@src/containers/menu';
-
+import {MenuContainer} from '@src/containers/menu';
+import { HomeContainer } from '../../containers/home/home.container';
 import {
   DashboardNavigationOptions,
   EcommerceNavigationOptions,
@@ -53,7 +47,7 @@ const ProductNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> =
 // );
 
 const MenuNavigator = createBottomTabNavigator({
-  ['HomeScreen']: ProductsListContainer,
+  ['HomeScreen']: HomeContainer,
   ['CategoryScreen']: Trainings1Container,
   ['SearchScreen']: ProfileSettings1Container,
   ['ProfileScreen']: SignIn2Container,

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Image,
-  ImageSourcePropType,
   View,
   ViewProps,
 } from 'react-native';
@@ -11,48 +10,23 @@ import {
   withStyles,
 } from '@kitten/theme';
 import {
-  Radio,
-  RadioGroup,
-  RadioProps,
   Text,
 } from '@kitten/ui';
 import { textStyle } from '@src/components/common';
+import { Product } from '../../core/model/product.model';
+import { RemoteImage } from '../../assets/images/type';
 
 interface ComponentProps {
-  image: ImageSourcePropType;
-  name: string;
-  type: string;
-  price: string;
-  description: string;
-  size: string;
-  colors: string[];
-  selectedColorIndex: number;
-  onColorSelect: (index: number) => void;
+  product: Product
 }
 
 export type ProductInfoProps = ThemedComponentProps & ViewProps & ComponentProps;
 
 class ProductInfoComponent extends React.Component<ProductInfoProps> {
 
-  private onColorSelectChange = (index: number) => {
-    this.props.onColorSelect(index);
-  };
-
-  private renderColorRadio = (color: string, index: number): React.ReactElement<RadioProps> => {
-    const { themedStyle } = this.props;
-
-    return (
-      <Radio
-        key={index}
-        style={themedStyle.radioItem}
-        text={color}
-      />
-    );
-  };
-
   public render(): React.ReactNode {
-    const { style, themedStyle, selectedColorIndex, ...withDataProps } = this.props;
-    const { image, name, type, price, description, size, colors, ...restProps } = withDataProps;
+    const { style, themedStyle, product, ...restProps } = this.props;
+    const image = new RemoteImage(product.image)
 
     return (
       <View
@@ -60,51 +34,25 @@ class ProductInfoComponent extends React.Component<ProductInfoProps> {
         style={[themedStyle.container, style]}>
         <Image
           style={[themedStyle.image, themedStyle.bottomSpace]}
-          source={image}
+          source={image.imageSource}
         />
         <View style={themedStyle.detailsContainer}>
           <View style={[themedStyle.nameContainer, themedStyle.bottomSpace]}>
-            <View>
+            <View style={{flex: 1}}>
               <Text
                 style={[themedStyle.nameLabel, themedStyle.labelBottomSpace]}
                 category='h6'>
-                {name}
+                {product.name}
               </Text>
               <Text
                 style={themedStyle.typeLabel}
                 appearance='hint'
                 category='p2'>
-                {type}
+                {product.categories_lv1_name}
               </Text>
             </View>
-            <Text style={themedStyle.costLabel}>{price}</Text>
+            <Text style={themedStyle.costLabel}>{Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND'}).format(product.price)}</Text>
           </View>
-          <Text
-            style={[themedStyle.descriptionText, themedStyle.bottomSpace]}
-            appearance='hint'>
-            {description}
-          </Text>
-          <Text
-            style={[themedStyle.nameLabel, themedStyle.labelBottomSpace]}
-            category='h6'>
-            Size
-          </Text>
-          <Text
-            style={[themedStyle.descriptionText, themedStyle.bottomSpace]}
-            appearance='hint'>
-            {size}
-          </Text>
-          <Text
-            style={[themedStyle.nameLabel, themedStyle.labelBottomSpace]}
-            category='h6'>
-            Color
-          </Text>
-          <RadioGroup
-            style={themedStyle.colorSelector}
-            selectedIndex={selectedColorIndex}
-            onChange={this.onColorSelectChange}>
-            {colors.map(this.renderColorRadio)}
-          </RadioGroup>
         </View>
       </View>
     );
@@ -126,11 +74,13 @@ export const ProductInfo = withStyles(ProductInfoComponent, (theme: ThemeType) =
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  nameLabel: textStyle.headline,
+  nameLabel: {
+    ...textStyle.headline,
+  },
   typeLabel: textStyle.paragraph,
   costLabel: {
     ...textStyle.headline,
-    fontSize: 26,
+    fontSize: 20,
     lineHeight: 32,
   },
   descriptionText: textStyle.paragraph,
