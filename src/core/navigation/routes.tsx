@@ -15,6 +15,7 @@ import { ProfileSettings1Container } from '../../containers/profileSettings1/pro
 import { Trainings1Container } from '../../containers/trainings1/trainings1.container';
 import {MenuContainer} from '@src/containers/menu';
 import { HomeContainer } from '../../containers/home/home.container';
+import { Profile6Container } from '../../containers/profile6/profile6.container';
 import {
   DashboardNavigationOptions,
   EcommerceNavigationOptions,

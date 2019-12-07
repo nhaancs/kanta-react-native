@@ -9,10 +9,8 @@ import {
 } from '@kitten/ui';
 import { ProductInfo } from '@src/components/ecommerce';
 import { Product } from '../../core/model/product.model';
-import { NavigationStackProp } from 'react-navigation-stack';
-import { ComponentProps } from '../../core/navigation/components/topNavigationBar.component';
 import { StorageHelper } from '../../core/utils/storage.helper';
-import { products } from '@src/core/data/product';
+import { ProductList2 } from '../../components/ecommerce/product-list-2/product-list-2.component';
 import {
   ContainerView,
   textStyle,
@@ -26,19 +24,20 @@ interface State {
 class ProductDetailsComponent extends React.Component<any, State> {
 
   public render(): React.ReactNode {
-    const { themedStyle, product } = this.props;
+    const { themedStyle, product, relatedProducts, onProductPress } = this.props;
   
     return (
       <ContainerView style={themedStyle.container}>
         <ProductInfo
-          product={this.props.product}
+          product={product}
         />
-        <Button
-          style={themedStyle.buyButton}
-          textStyle={textStyle.button}
-          size='giant'>
-          MUA NGAY
-        </Button>
+
+        <ProductList2 
+          title={'SẢN PHẨM LIÊN QUAN'}
+          data={relatedProducts}
+          onItemPress={onProductPress}
+          renderItem={null}
+          />
       </ContainerView>
     );
   }

@@ -7,8 +7,12 @@ import {
 import { ProductList } from '@src/components/ecommerce';
 import { Product } from '@src/core/model';
 import { ContainerView } from '../../components/common/containerView.component';
+import { ProductList2 } from '../../components/ecommerce/product-list-2/product-list-2.component';
+import { Text } from '@kitten/ui';
 
 interface ComponentProps {
+  trendingProducts: Product[];
+  seenProducts: Product[];
   recommendProducts: Product[];
   monthlyProducts: Product[];
   saleProducts: Product[];
@@ -33,10 +37,23 @@ class HomeComponent extends React.Component<ProductsListProps, State> {
   };
 
   public render(): React.ReactNode {
-    const { themedStyle, recommendProducts, monthlyProducts, saleProducts } = this.props;
+    const { themedStyle, recommendProducts, monthlyProducts, saleProducts, trendingProducts, seenProducts } = this.props;
 
     return (
       <ContainerView>
+        <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: 24, color: 'red', paddingTop: 16, paddingBottom: 8}}>{'KANTA APP'}</Text>
+        <ProductList2 
+          title={'TRENDING'}
+          data={trendingProducts}
+          onItemPress={this.onProductPress}
+          renderItem={null}
+          />
+        <ProductList2 
+          title={'SẢN PHẨM ĐÃ XEM'}
+          data={seenProducts}
+          onItemPress={this.onProductPress}
+          renderItem={null}
+          />
         <ProductList
           contentContainerStyle={themedStyle.productsListContent}
           data={recommendProducts}

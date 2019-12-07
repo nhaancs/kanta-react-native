@@ -1,4 +1,6 @@
 import React from 'react';
+import { Product } from '../../../../core/model/product.model';
+import { RemoteImage } from '../../../../assets/images/type';
 import {
   ImageSourcePropType,
   ListRenderItemInfo,
@@ -21,8 +23,8 @@ import {
 
 // @ts-ignore (override `renderItem` prop)
 interface ComponentProps extends ListProps {
-  data: ImageSourcePropType[];
-  onItemPress: (index: number) => void;
+  data: Product[];
+  onItemPress: (product: Product) => void;
   renderItem?: (info: ListRenderItemInfo<ImageSourcePropType>, style: StyleType) => React.ReactElement<any>;
 }
 
@@ -33,11 +35,12 @@ export type ProfileActivityList2Props = ThemedComponentProps & ComponentProps;
 class ProfileActivityList2Component extends React.Component<ProfileActivityList2Props> {
 
   private onItemPress = (index: number) => {
-    this.props.onItemPress(index);
+    this.props.onItemPress(this.props.data[index]);
   };
 
-  private renderItem = (info: ListRenderItemInfo<ImageSourcePropType>): ListItemElement => {
+  private renderItem = (info: ListRenderItemInfo<Product>): ListItemElement => {
     const { themedStyle } = this.props;
+    const image = new RemoteImage(info.item.image)
 
     return (
       <ListItem
@@ -46,7 +49,7 @@ class ProfileActivityList2Component extends React.Component<ProfileActivityList2
         onPress={this.onItemPress}>
         <ProfileActivityList2Item
           style={themedStyle.item}
-          source={info.item}
+          source={image.imageSource}
         />
       </ListItem>
     );

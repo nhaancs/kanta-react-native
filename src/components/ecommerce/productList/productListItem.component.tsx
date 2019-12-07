@@ -80,6 +80,7 @@ class ProductListItemComponent extends React.Component<ProductListItemProps> {
               textStyle={textStyle.button}
               icon={CartIconOutline}
               onPress={this.onAddToBucket}
+              status='danger'
             />
           </View>
         </View>

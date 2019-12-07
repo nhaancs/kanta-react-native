@@ -9,12 +9,10 @@ import {
   withStyles,
 } from '@kitten/theme';
 import { Button } from '@kitten/ui';
-import {
-  ProfileSetting,
-  ProfilePhoto,
-} from '@src/components/social';
 import { CameraIconFill } from '@src/assets/icons';
 import { Profile } from '@src/core/model';
+import { ProfilePhoto } from '../../components/profileSettings/profilePhoto.component';
+import { ProfileSetting } from '../../components/profileSettings/profileSetting.component';
 import {
   ContainerView,
   textStyle,
