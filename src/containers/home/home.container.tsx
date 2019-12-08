@@ -4,8 +4,8 @@ import { Product } from '@src/core/model';
 import { Home } from './home.component';
 import { StorageHelper } from '../../core/utils/storage.helper';
 import Constants from 'expo-constants';
-import { Spinner, Layout } from 'react-native-ui-kitten';
-import { View } from 'react-native';
+import { Spinner } from 'react-native-ui-kitten';
+import { View, RefreshControl, ScrollView } from 'react-native';
 
 interface State {
   trendingProducts: Product[];
@@ -13,7 +13,7 @@ interface State {
   recommendProducts: Product[];
   monthlyProducts: Product[];
   saleProducts: Product[];
-  isLoading: Boolean;
+  isLoading: boolean;
 }
 
 export class HomeContainer extends React.Component<NavigationStackScreenProps, State> {
@@ -23,10 +23,15 @@ export class HomeContainer extends React.Component<NavigationStackScreenProps, S
     recommendProducts: [],
     monthlyProducts: [],
     saleProducts: [],
-    isLoading: true
+    isLoading: false,
   };
 
   public componentWillMount() {
+    this.loadData()
+  }
+
+  loadData = () => {
+    this.setState({isLoading: true})
     let deviceId = Constants.deviceId
 
     const trendingAPICall = fetch('http://35.221.157.44:9000/product/trending/get?page=1&number=10');
@@ -70,12 +75,11 @@ export class HomeContainer extends React.Component<NavigationStackScreenProps, S
             size='giant'
             />
         </View>
-          
-        
       )
     }
 
     return (
+      <ScrollView refreshControl={ <RefreshControl refreshing={this.state.isLoading} onRefresh={this.loadData} /> }>
         <Home
           trendingProducts={this.state.trendingProducts}
           seenProducts={this.state.seenProducts}
@@ -84,6 +88,7 @@ export class HomeContainer extends React.Component<NavigationStackScreenProps, S
           saleProducts={this.state.saleProducts}
           onProductPress={this.onProductPress}
         />
+      </ScrollView>
     );
   }
 }
