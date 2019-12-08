@@ -68,6 +68,7 @@ class ProductListComponent extends React.Component<ProductListProps> {
     return () =>  (
       <Text
         appearance='hint'
+        style={{fontSize: 12}}
         >{title}</Text>
     );
   };

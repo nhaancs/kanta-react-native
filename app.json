@@ -10,12 +10,10 @@
     "githubUrl": "https://github.com/nhaancs/kanta-react-native",
     "ios": {
       "bundleIdentifier": "com.kanta.kantaapp",
-      "appStoreUrl": ""
     },
     "android": {
       "package": "com.kanta.kantaapp",
       "versionCode": 17,
-      "playStoreUrl": ""
     },
     "androidStatusBar": {
       "backgroundColor": "#DA0A0F"

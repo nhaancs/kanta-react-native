@@ -38,22 +38,18 @@ class ProductInfoComponent extends React.Component<ProductInfoProps> {
           source={image.imageSource}
         />
         <View style={themedStyle.detailsContainer}>
-          <View style={[themedStyle.nameContainer, themedStyle.bottomSpace]}>
-            <View style={{flex: 1}}>
-              <Text
-                style={[themedStyle.nameLabel, themedStyle.labelBottomSpace]}
-                category='h6'>
-                {product.name}
-              </Text>
-              <Text
-                style={themedStyle.typeLabel}
-                appearance='hint'
-                category='p2'>
-                {product.categories_lv1_name}
-              </Text>
-            </View>
-            <Text style={themedStyle.costLabel}>{FormatHelper.formatVNCurrency(product.price)}</Text>
-          </View>
+          <Text
+            style={[themedStyle.nameLabel, themedStyle.labelBottomSpace]}
+            category='h6'>
+            {product.name}
+          </Text>
+          <Text
+            style={themedStyle.typeLabel}
+            appearance='hint'
+            category='p2'>
+            {product.categories_lv1_name}
+          </Text>
+          <Text style={themedStyle.costLabel}>{FormatHelper.formatVNCurrency(product.price)}</Text>
         </View>
       </View>
     );
@@ -77,6 +73,7 @@ export const ProductInfo = withStyles(ProductInfoComponent, (theme: ThemeType) =
   },
   nameLabel: {
     ...textStyle.headline,
+    alignSelf: "stretch"
   },
   typeLabel: textStyle.paragraph,
   costLabel: {

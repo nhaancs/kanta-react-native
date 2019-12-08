@@ -62,6 +62,7 @@ export const ProductList2 = withStyles(ProductList2Component, (theme: ThemeType)
     marginHorizontal: 8,
     marginTop: 8,
     backgroundColor: theme['background-basic-color-2'],
+    fontSize: 12,
     ...textStyle.subtitle,
   },
 }));
