@@ -9,15 +9,9 @@ KANTA APP is an e-commerce application focus on recommendation system.
 
 ## App Preview
 
-### Video Preview
-
-<a href="https://expo.io/@skempin/lyrics-king">
-	<img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/video.gif" width="350" >
-</a>
-
 ### Search Screen
 
-<img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/search.jpg" width="270" alt="Lyrics King - Search screen" hspace="5"><img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/suggestions.jpg" width="270" alt="Lyrics King - Suggestions on search screen">
+[](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/home.png)
 
 ### Details Screen
 
