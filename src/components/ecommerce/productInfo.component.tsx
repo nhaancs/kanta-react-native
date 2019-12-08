@@ -15,6 +15,7 @@ import {
 import { textStyle } from '@src/components/common';
 import { Product } from '../../core/model/product.model';
 import { RemoteImage } from '../../assets/images/type';
+import { FormatHelper } from '../../core/utils/format.helper';
 
 interface ComponentProps {
   product: Product
@@ -51,7 +52,7 @@ class ProductInfoComponent extends React.Component<ProductInfoProps> {
                 {product.categories_lv1_name}
               </Text>
             </View>
-            <Text style={themedStyle.costLabel}>{Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND'}).format(product.price)}</Text>
+            <Text style={themedStyle.costLabel}>{FormatHelper.formatVNCurrency(product.price)}</Text>
           </View>
         </View>
       </View>

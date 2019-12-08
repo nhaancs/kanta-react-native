@@ -19,6 +19,7 @@ import { textStyle } from '@src/components/common';
 import { CartIconOutline } from '@src/assets/icons';
 import { Product } from '../../../core/model/product.model';
 import { RemoteImage } from '../../../assets/images/type';
+import { FormatHelper } from '../../../core/utils/format.helper';
 
 interface ListDerivedProps {
   index?: number;
@@ -73,7 +74,7 @@ class ProductListItemComponent extends React.Component<ProductListItemProps> {
             <Text
               style={themedStyle.costLabel}
               category='s1'>
-              {Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND'}).format(product.price)}
+              {FormatHelper.formatVNCurrency(product.price)}
             </Text>
             <Button
               style={themedStyle.buyButton}

@@ -27,11 +27,6 @@ interface State {
 export type ProductsListProps = ThemedComponentProps & ComponentProps;
 
 class HomeComponent extends React.Component<ProductsListProps, State> {
-  public state: State = {
-    tabCategories: [],
-    selectedIndex: 0,
-  };
-
   private onProductPress = (selectedProduct: Product) => {
     this.props.onProductPress(selectedProduct);
   };

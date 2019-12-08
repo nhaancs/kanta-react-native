@@ -59,8 +59,8 @@ export class HomeContainer extends React.Component<NavigationStackScreenProps, S
   public render(): React.ReactNode {
     return (
       <Home
-        trendingProducts={this.state.recommendProducts}
-        seenProducts={this.state.recommendProducts}
+        trendingProducts={this.state.trendingProducts}
+        seenProducts={this.state.seenProducts}
         recommendProducts={this.state.recommendProducts}
         monthlyProducts={this.state.monthlyProducts}
         saleProducts={this.state.saleProducts}

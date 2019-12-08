@@ -56,12 +56,11 @@ class ProductList2Component extends React.Component<ProductListProps> {
 export const ProductList2 = withStyles(ProductList2Component, (theme: ThemeType) => ({
   activityList: {
     paddingHorizontal: 16,
-    paddingVertical: 16,
+    paddingVertical: 8,
   },
   categoryLabel: {
     marginHorizontal: 8,
     marginTop: 8,
-    paddingBottom: 8,
     backgroundColor: theme['background-basic-color-2'],
     ...textStyle.subtitle,
   },
