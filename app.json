@@ -1,24 +1,24 @@
 {
   "expo": {
-    "name": "Kitten Tricks",
+    "name": "KANTA",
     "icon": "./src/assets/icons/icon.png",
     "version": "2.0.1",
-    "slug": "kittenTricks",
+    "slug": "KANTA",
     "sdkVersion": "35.0.0",
     "privacy": "public",
     "orientation": "portrait",
-    "githubUrl": "https://github.com/akveo/kittenTricks",
+    "githubUrl": "https://github.com/nhaancs/kanta-react-native",
     "ios": {
-      "bundleIdentifier": "com.akveo.kittentricks",
-      "appStoreUrl": "https://itunes.apple.com/us/app/kitten-tricks/id1246143230"
+      "bundleIdentifier": "com.kanta.kantaapp",
+      "appStoreUrl": ""
     },
     "android": {
-      "package": "com.akveo.kittenTricks",
+      "package": "com.kanta.kantaapp",
       "versionCode": 17,
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.akveo.kittenTricks"
+      "playStoreUrl": ""
     },
     "androidStatusBar": {
-      "backgroundColor": "#FFFFFF"
+      "backgroundColor": "#DA0A0F"
     },
     "assetBundlePatterns": [
       "src/assets/images/source/*",

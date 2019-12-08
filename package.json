@@ -1,12 +1,12 @@
 {
-  "name": "kitten-tricks",
+  "name": "kanta-app",
   "version": "2.0.1",
   "private": true,
   "license": "MIT",
-  "author": "akveo <contact@akveo.com>",
-  "repository": "git+https://github.com/akveo/kittenTricks.git",
+  "author": "nhanpublic@gmail.com",
+  "repository": "git+https://github.com/nhaancs/kanta-react-native.git",
   "bugs": {
-    "url": "https://github.com/akveo/kittenTricks/issues"
+    "url": "https://github.com/nhaancs/kanta-react-native/issues"
   },
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
