@@ -10,7 +10,6 @@ import {
 } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { ProductDetailsContainer } from '../../containers/productDetails/productDetails.container';
-import { Trainings1Container } from '../../containers/trainings1/trainings1.container';
 import {MenuContainer} from '@src/containers/menu';
 import { HomeContainer } from '../../containers/home/home.container';
 import { ProfileContainer } from '../../containers/profile/profile.container';
@@ -47,8 +46,6 @@ const ProductNavigationMap: NavigationRouteConfigMap<any, NavigationStackProp> =
 
 const MenuNavigator = createBottomTabNavigator({
   ['HomeScreen']: HomeContainer,
-  ['CategoryScreen']: Trainings1Container,
-  ['SearchScreen']: Trainings1Container,
   ['ProfileScreen']: ProfileContainer,
 }, {
   tabBarComponent: MenuContainer,

@@ -61,11 +61,11 @@ class TrainingCardComponent extends React.Component<TrainingCardProps> {
             <View style={themedStyle.controlsContainer}>
               <Chips
                 style={themedStyle.chips}
-                icon={ClockIconOutline}>
+                >
                 <Text
                   style={themedStyle.chipsText}
                   category='c1'>
-                  {training.duration}
+                  {'Xem'}
                 </Text>
               </Chips>
               {this.renderDetailsIcon()}
@@ -107,6 +107,7 @@ export const TrainingCard2 = withStyles(TrainingCardComponent, (theme: ThemeType
   chipsText: {
     color: 'white',
     ...textStyle.paragraph,
+    textAlign: 'center',
   },
   detailsIcon: {
     width: 22,

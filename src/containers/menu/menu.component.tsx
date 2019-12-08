@@ -57,20 +57,11 @@ class MenuComponent extends React.Component<Props> {
           <BottomNavigation
             selectedIndex={selectedIndex}
             onSelect={this.onTabSelect}
-            indicatorStyle={styles.indicator  as StyleProp<ViewStyle>}
-            
+            indicatorStyle={styles.indicator as StyleProp<ViewStyle>}
             >
             <BottomNavigationTab
               title='Trang chủ'
               icon={HomeIcon}
-            />
-            <BottomNavigationTab
-              title='Danh mục'
-              icon={ListIcon}
-            />
-            <BottomNavigationTab
-              title='Tìm kiếm'
-              icon={SearchIcon}
             />
             <BottomNavigationTab
               title='Cá nhân'
