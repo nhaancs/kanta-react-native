@@ -53,16 +53,9 @@ const EcommerceMenuTopNavigationParams: TopNavigationParams = {
       props.navigation.goBack(KEY_NAVIGATION_BACK);
     };
 
-    const onSearchPress = () => {
-      Alert.alert('Search...');
-    };
+    const onSearchPress = () => {};
 
-    const onShoppingCartPress = () => {
-      props.navigation.navigate({
-        key: state.routeName,
-        routeName: 'Shopping Cart',
-      });
-    };
+    const onShoppingCartPress = () => {};
 
     return (
       <EcommerceHeader

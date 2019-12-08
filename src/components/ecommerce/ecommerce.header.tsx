@@ -78,7 +78,6 @@ class EcommerceHeaderComponent extends React.Component<EcommerceHeaderProps> {
           alignment='center'
           title={title}
           leftControl={this.renderLeftControl()}
-          rightControls={this.renderRightControls()}
         />
       </SafeAreaView>
     );
