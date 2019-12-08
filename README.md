@@ -6,35 +6,6 @@
 
 KANTA APP is an e-commerce application focus on recommendation system.
 
-### [Expo Demo Link](https://expo.io/@skempin/lyrics-king)
-
-<img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/header-overview.jpg" width="900"  alt="Lyrics King - React Native Expo app">
-
-## Contents
-
-- [App Preview](#app-preview)
-	- [Video Preview](#video-preview)
-	- [Search Screen](#search-screen)
-	- [Details Screen](#details-screen)
-	- [About Screen](#about-screen)
-	- [Navigation (Drawer)](#navigation-drawer)
-- [Expo Project Page](#expo-project-page)
-- [Adobe XD files](#adobe-xd-files)
-- [App Features](#app-features)
-	- [Screens](#screens)
-	- [Components](#components)
-	- [Config](#config)
-	- [Lib](#lib)
-	- [Utils](#utils)
-- [Getting Started](#getting-started)
-- [What's Included](#whats-included)
-- [API's Used](#apis-used)
-- [Contributing](#contributing)
-- [Author](#author)
-- [Google Play Store](#google-play-store)
-- [Donate](#donate)
-- [License](#license)
-
 
 ## App Preview
 
@@ -59,20 +30,6 @@ KANTA APP is an e-commerce application focus on recommendation system.
 ### Navigation (Drawer)
 
 <img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/navigation.jpg" width="270" alt="Lyrics King - Navigation drawer">
-
-## [Expo Project Page](https://expo.io/@skempin/lyrics-king)
-
-This project has been built using [Expo](https://expo.io/). Please install `npm install expo-cli --global` to run this project locally.
-
-Scan the below QR code to open the project on Android:
-
-![](https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/qr.png)
-
-<br>
-
-## Adobe XD files
-
-Design files for the UI can be found in `_design_assets/adobeXD` in the project root. UI design implemented with [flexbox](https://docs.expo.io/versions/latest/react-native/flexbox).
 
 ## App Features
 
@@ -119,52 +76,6 @@ Design files for the UI can be found in `_design_assets/adobeXD` in the project 
 4. `npm install` or `yarn install`
 5. Run `expo start`
 
-## What's Included
-
-|                                Name                                | Description                                                                                                                                      |
-| :----------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-|           [Expo (incl. React Native)](https://expo.io/)            | Expo is a free and open source toolchain built around React Native to help you build native iOS and Android projects using JavaScript and React. |
-|          [React Navigation](https://reactnavigation.org/)          | Routing and navigation for your React Native apps.                                                                                               |
-| [Format Duration](https://github.com/hypermodules/format-duration) | Convert a number in milliseconds to a standard duration string.                                                                                  |
-|    [RN-Placeholder](https://github.com/mfrachet/rn-placeholder)    | Display some placeholder stuff before rendering your text or media content in React Native.                                                      |
-
-## API's Used
-
-- [Deezer](https://developers.deezer.com/)
-- [Lyrics.OVH](https://api.lyrics.ovh)
-
-## Contributing
-
-Due to time constraints there are several features that I haven’t been able to develop yet. If you would like to develop your React Native skills and contribute any of the features below this would be hugely beneficial! :tada:
-
-- [x] [Debouncing or throttling](https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react) on search functionality.
-- [x] [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) on components.
-- [ ] Adding clear search button functionality on Android. This functionality [already exists on iOS](https://facebook.github.io/react-native/docs/textinput#clearbuttonmode).
-- [ ] [Animations](https://docs.expo.io/versions/latest/react-native/animations) would be a nice touch! Fading in the details screen background image would be priority.
-- [ ] Any general performance improvements.
-
-Other contributions and suggestions are always very welcome! [Contact me](https://www.stephenkempin.co.uk) if you wish to discuss anything.
-
-## Author
-
-[Stephen Kempin](https://www.stephenkempin.co.uk)
-
-[Lyrics King Project Github](https://github.com/SKempin/Lyrics-King-React-Native)
-
-## Google Play Store
-
-View my commercial apps on the [SK-UK Google Play Store](https://play.google.com/store/apps/developer?id=SK+-+UK)
-
-<a href='https://play.google.com/store/apps/developer?id=SK+-+UK&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='SK-UK Google Play Store' src='https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/google-play.jpg' width='180px'></a>
-
-## Donate
-
-If you like this project and wish to say to say thanks - I'm always open to a coffee!  :coffee:
-
-<a href="https://www.buymeacoffee.com/oru9CZh" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" width='180px' ></a>
-
 ## License
 
-[MIT](https://github.com/SKempin/Lyrics-King-React-Native/blob/master/LICENSE)
-
-You are welcome to use this however you wish within the MIT license, but please retain [my credentials](https://www.stephenkempin.co.uk/) and links back to [this repo](https://github.com/SKempin/Lyrics-King-React-Native).
+You are welcome to use this however you wish within the MIT license.
