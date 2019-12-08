@@ -10,7 +10,7 @@ KANTA APP is an e-commerce application focus on recommendation system.
 ![](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/home.png)
 
 
-## Project structure
+## Project Structure
 
 - `src/containers/` contains all screen components
 
@@ -25,6 +25,10 @@ KANTA APP is an e-commerce application focus on recommendation system.
 3. `cd` into this project directory
 4. `npm install` or `yarn install`
 5. Run `expo start`
+
+## Reporting Issues
+
+You can report an issue at [https://github.com/nhaancs/kanta-react-native/issues](https://github.com/nhaancs/kanta-react-native/issues)
 
 ## License
 
