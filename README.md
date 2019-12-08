@@ -9,23 +9,21 @@ KANTA APP is an e-commerce application focus on recommendation system.
 
 ## App Preview
 
-### Search Screen
+### Home Screen
 
 ![](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/home.png)
 
-### Details Screen
+### Product Detail Screen
 
-<img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/details-ariana.jpg" width="270" hspace="5" alt="Lyrics King - Details screen, Ariana Grande"><img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/details-above.jpg" width="270" hspace="5" alt="Lyrics King - Details screen, Above and Beyond"><img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/details-dua.jpg" width="270"  alt="Lyrics King - Details screen, Dua Lipa">
+![](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/detail.png)
 
-### About Screen
+### Profile Screen
 
-<img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/about.jpg" width="270" alt="Lyrics King - About screen">
+![](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/profile1.png)
+![](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/profile2.png)
 
-### Navigation (Drawer)
 
-<img src="https://github.com/SKempin/Lyrics-King-React-Native/blob/master/_github/screenshots/navigation.jpg" width="270" alt="Lyrics King - Navigation drawer">
-
-## App Features
+## Project structure
 
 ### Screens
 
