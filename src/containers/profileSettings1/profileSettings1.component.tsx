@@ -3,24 +3,20 @@ import {
   ButtonProps,
   View,
 } from 'react-native';
-import {
-  ThemedComponentProps,
-  ThemeType,
-  withStyles,
-} from '@kitten/theme';
+import { ThemedComponentProps, withStyles, ThemeType } from '@kitten/theme';
 import { Button } from '@kitten/ui';
 import { CameraIconFill } from '@src/assets/icons';
-import { Profile } from '@src/core/model';
 import { ProfilePhoto } from '../../components/profileSettings/profilePhoto.component';
 import { ProfileSetting } from '../../components/profileSettings/profileSetting.component';
+import { RemoteImage } from '../../assets/images/type';
+import { ProfileModel } from '../profile/profile.container';
 import {
   ContainerView,
   textStyle,
 } from '@src/components/common';
 
 interface ComponentProps {
-  profile: Profile;
-  onUploadPhotoButtonPress: () => void;
+  profile: ProfileModel;
   onButtonPress: () => void;
 }
 
@@ -32,10 +28,6 @@ class ProfileSettings1Component extends React.Component<ProfileSettings1Props> {
     this.props.onButtonPress();
   };
 
-  private onPhotoButtonPress = () => {
-    this.props.onUploadPhotoButtonPress();
-  };
-
   private renderPhotoButton = (): React.ReactElement<ButtonProps> => {
     const { themedStyle } = this.props;
 
@@ -44,20 +36,20 @@ class ProfileSettings1Component extends React.Component<ProfileSettings1Props> {
         style={themedStyle.photoButton}
         status='basic'
         icon={CameraIconFill}
-        onPress={this.onPhotoButtonPress}
       />
     );
   };
 
   public render(): React.ReactNode {
     const { themedStyle, profile } = this.props;
+    const image = new RemoteImage(profile.pic)
 
     return (
       <ContainerView style={themedStyle.container}>
         <View style={themedStyle.photoSection}>
           <ProfilePhoto
             style={themedStyle.photo}
-            source={profile.photo.imageSource}
+            source={image.imageSource}
             button={this.renderPhotoButton}
           />
         </View>
@@ -65,52 +57,21 @@ class ProfileSettings1Component extends React.Component<ProfileSettings1Props> {
           <ProfileSetting
             style={themedStyle.profileSetting}
             hint='First Name'
-            value={profile.firstName}
+            value={profile.first_name}
           />
           <ProfileSetting
             style={themedStyle.profileSetting}
             hint='Last Name'
-            value={profile.lastName}
-          />
-          <ProfileSetting
-            style={themedStyle.profileSetting}
-            hint='Gender'
-            value={profile.gender}
-          />
-          <ProfileSetting
-            style={themedStyle.profileSetting}
-            hint='Age'
-            value={`${profile.age}`}
-          />
-          <ProfileSetting
-            style={themedStyle.profileSetting}
-            hint='Weight'
-            value={`${profile.weight} kg`}
-          />
-          <ProfileSetting
-            style={themedStyle.profileSetting}
-            hint='Height'
-            value={`${profile.height} cm`}
-          />
-        </View>
-        <View style={themedStyle.contactSection}>
-          <ProfileSetting
-            style={themedStyle.profileSetting}
-            hint='Email'
-            value={profile.email}
-          />
-          <ProfileSetting
-            style={themedStyle.profileSetting}
-            hint='Phone Number'
-            value={profile.phoneNumber}
+            value={profile.last_name}
           />
         </View>
         <Button
           style={themedStyle.button}
           textStyle={textStyle.button}
           size='large'
+          status='danger'
           onPress={this.onButtonPress}>
-          DONE
+          Đăng Xuất
         </Button>
       </ContainerView>
     );

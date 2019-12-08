@@ -1,5 +1,4 @@
 import React from 'react';
-import { Alert } from 'react-native';
 import { NavigationParams } from 'react-navigation';
 import { NavigationStackScreenProps } from 'react-navigation-stack';
 import { NavigationTabScreenProps } from 'react-navigation-tabs';

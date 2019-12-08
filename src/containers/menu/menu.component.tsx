@@ -12,6 +12,7 @@ import {
   Icon,
 } from '@kitten/ui';
 import { themes } from '@src/core/themes';
+import { StyleSheet, StyleProp, ViewStyle } from 'react-native';
 
 interface ComponentProps {
   selectedIndex: number;
@@ -45,12 +46,20 @@ class MenuComponent extends React.Component<Props> {
   public render(): React.ReactNode {
     const { selectedIndex, themedStyle } = this.props;
 
+    const styles = StyleSheet.create({
+      indicator: { backgroundColor: 'red' },
+      title: { color: 'red' },
+    });
+
     return (
       <SafeAreaView style={themedStyle.safeAreaContainer}>
         <ThemeProvider theme={{...this.props.theme, ...themes['App Theme']}}>
           <BottomNavigation
             selectedIndex={selectedIndex}
-            onSelect={this.onTabSelect}>
+            onSelect={this.onTabSelect}
+            indicatorStyle={styles.indicator  as StyleProp<ViewStyle>}
+            
+            >
             <BottomNavigationTab
               title='Trang chủ'
               icon={HomeIcon}

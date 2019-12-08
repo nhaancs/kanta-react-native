@@ -8,4 +8,8 @@ export class StorageHelper {
     static get = async (key: string) => {
         return await SecureStore.getItemAsync(key);
     };
+
+    static delete = (key: string) => {
+        SecureStore.deleteItemAsync(key);
+    };
 }
