@@ -4,6 +4,8 @@ import { Product } from '@src/core/model';
 import { Home } from './home.component';
 import { StorageHelper } from '../../core/utils/storage.helper';
 import Constants from 'expo-constants';
+import { Spinner, Layout } from 'react-native-ui-kitten';
+import { View } from 'react-native';
 
 interface State {
   trendingProducts: Product[];
@@ -11,6 +13,7 @@ interface State {
   recommendProducts: Product[];
   monthlyProducts: Product[];
   saleProducts: Product[];
+  isLoading: Boolean;
 }
 
 export class HomeContainer extends React.Component<NavigationStackScreenProps, State> {
@@ -20,6 +23,7 @@ export class HomeContainer extends React.Component<NavigationStackScreenProps, S
     recommendProducts: [],
     monthlyProducts: [],
     saleProducts: [],
+    isLoading: true
   };
 
   public componentWillMount() {
@@ -44,6 +48,7 @@ export class HomeContainer extends React.Component<NavigationStackScreenProps, S
           recommendProducts: finalVals[2].data || [],
           monthlyProducts: finalVals[3].data || [],
           saleProducts: finalVals[4].data || [],
+          isLoading: false,
         })
       });
   }
@@ -57,15 +62,28 @@ export class HomeContainer extends React.Component<NavigationStackScreenProps, S
   };
 
   public render(): React.ReactNode {
+    if (this.state.isLoading) {
+      return (
+        <View style={{flex: 1, justifyContent : 'center', alignItems: 'center'}}>
+          <Spinner
+            status='danger' 
+            size='giant'
+            />
+        </View>
+          
+        
+      )
+    }
+
     return (
-      <Home
-        trendingProducts={this.state.trendingProducts}
-        seenProducts={this.state.seenProducts}
-        recommendProducts={this.state.recommendProducts}
-        monthlyProducts={this.state.monthlyProducts}
-        saleProducts={this.state.saleProducts}
-        onProductPress={this.onProductPress}
-      />
+        <Home
+          trendingProducts={this.state.trendingProducts}
+          seenProducts={this.state.seenProducts}
+          recommendProducts={this.state.recommendProducts}
+          monthlyProducts={this.state.monthlyProducts}
+          saleProducts={this.state.saleProducts}
+          onProductPress={this.onProductPress}
+        />
     );
   }
 }
