@@ -70,6 +70,13 @@ class HomeComponent extends React.Component<ProductsListProps, State> {
           onItemAddPress={this.onProductPress}
           title={'SẢN PHẨM GIẢM GIÁ'}
           />
+
+        <Text
+          style={{fontSize: 11, backgroundColor: "#F7F8FA", textAlign: "center", paddingBottom: 8}}
+          appearance='hint'
+          category='s1'>
+          {'Tìm kiếm để tiếp tục khám phá'}
+        </Text>
       </ContainerView>
     );
   }

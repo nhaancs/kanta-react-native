@@ -55,10 +55,7 @@ export class ProductDetailsContainer extends React.Component<NavigationStackScre
 
   private onProductPress = (product: Product) => {
     StorageHelper.set("VIEWING_PRODUCT", JSON.stringify(product))
-    this.props.navigation.navigate({
-      key: "ProductDetail",
-      routeName: "ProductDetail",
-    });
+    this.props.navigation.push("ProductDetail");
   };
 
   public render(): React.ReactNode {

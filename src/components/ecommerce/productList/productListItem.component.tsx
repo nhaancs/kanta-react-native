@@ -61,7 +61,7 @@ class ProductListItemComponent extends React.Component<ProductListItemProps> {
             <Text
               style={themedStyle.nameLabel}
               category='s1'>
-              {product.name}
+              {FormatHelper.maxCharacters(product.name, 50)}
             </Text>
             <Text
               style={themedStyle.typeLabel}
@@ -92,7 +92,7 @@ class ProductListItemComponent extends React.Component<ProductListItemProps> {
 
 export const ProductListItem = withStyles(ProductListItemComponent, (theme: ThemeType) => ({
   container: {
-    minHeight: 272,
+    height: 272,
     borderRadius: 12,
     overflow: 'hidden',
   },
@@ -111,9 +111,16 @@ export const ProductListItem = withStyles(ProductListItemComponent, (theme: Them
     width: null,
     height: 140,
   },
-  nameLabel: textStyle.subtitle,
+  nameLabel: {
+    fontSize: 12,
+    lineHeight: 14,
+    ...textStyle.subtitle
+  },
   typeLabel: textStyle.caption1,
-  costLabel: textStyle.subtitle,
+  costLabel: {
+    fontSize: 12,
+    ...textStyle.subtitle
+  },
   buyButton: {
     width: 32,
     height: 32,
