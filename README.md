@@ -1,15 +1,10 @@
 # KANTA APP
 
 ![](https://img.shields.io/github/license/SKempin/Lyrics-King-React-Native.svg?style=flat-square)
-![](https://img.shields.io/github/stars/SKempin/Lyrics-King-React-Native.svg?style=flat-square)
-![](https://img.shields.io/github/forks/SKempin/Lyrics-King-React-Native.svg?style=flat-square)
 [![Build Status](https://travis-ci.org/SKempin/Lyrics-King-React-Native.svg?branch=master)](https://travis-ci.org/SKempin/Lyrics-King-React-Native)
-[![Mentioned in Awesome Expo](https://awesome.re/mentioned-badge.svg)](https://github.com/expo/awesome-expo)
 
 
-A [React Native](https://facebook.github.io/react-native/) native app utilising [Expo](https://expo.io/), [React Navigation](https://reactnavigation.org) and fetching data from multiple API's ([Deezer](https://developers.deezer.com/) and [Lyrics.OVH](https://www.lyrics.ovh)). UI built with [Adobe XD](https://www.adobe.com/uk/products/xd.html).
-<br><br>
-Built as a personal training project for [React Native](https://facebook.github.io/react-native/). Designed in [Adobe XD](https://www.adobe.com/uk/products/xd.html). Design and development by [Stephen Kempin](https://www.stephenkempin.co.uk). This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
+KANTA APP is an e-commerce application focus on recommendation system.
 
 ### [Expo Demo Link](https://expo.io/@skempin/lyrics-king)
 
