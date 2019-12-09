@@ -13,6 +13,10 @@ Expo demo:
 
 ![](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/expo-qr-with-icon.png)
 
+Video demo: 
+
+[https://www.youtube.com/watch?v=50xrnbOtmwE](https://www.youtube.com/watch?v=50xrnbOtmwE)
+
 
 ## Project Structure
 
