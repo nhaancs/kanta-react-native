@@ -6,6 +6,7 @@ import {
 import { ProductDetails } from './productDetails.component';
 import { StorageHelper } from '../../core/utils/storage.helper';
 import Constants from 'expo-constants';
+import { CateLv1Model } from '../../core/model/category.model';
 
 export interface BuyActionModel {
   title: string;
@@ -15,6 +16,7 @@ export interface BuyActionModel {
 interface State {
   product: Product;
   relatedProducts: Product[]
+  relatedCategories: CateLv1Model[]
 }
 
 export class ProductDetailsContainer extends React.Component<NavigationStackScreenProps, State> {
@@ -22,6 +24,7 @@ export class ProductDetailsContainer extends React.Component<NavigationStackScre
   public state: State = {
     product: new Product(),
     relatedProducts: [],
+    relatedCategories: []
   };
 
   componentDidMount() {
@@ -50,6 +53,16 @@ export class ProductDetailsContainer extends React.Component<NavigationStackScre
           relatedProducts: res.data || []
         })
       })
+      
+      fetch('http://35.221.157.44:9000/categories/getall')
+      .then(res => {
+        return res.json()
+      })
+      .then(res => {
+        this.setState({
+          relatedCategories: res.data || []
+        })
+      })
     })
   }
 
@@ -64,6 +77,7 @@ export class ProductDetailsContainer extends React.Component<NavigationStackScre
         product={this.state.product}
         onProductPress={this.onProductPress}
         relatedProducts={this.state.relatedProducts}
+        relatedCategories={this.state.relatedCategories}
       />
     );
   }

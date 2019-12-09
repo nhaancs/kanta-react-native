@@ -47,7 +47,7 @@ class ProductInfoComponent extends React.Component<ProductInfoProps> {
             style={themedStyle.typeLabel}
             appearance='hint'
             category='p2'>
-            {product.categories_lv1_name}
+            {product.categories_lv3_name}
           </Text>
           <Text style={themedStyle.costLabel}>{FormatHelper.formatVNCurrency(product.price)}</Text>
         </View>

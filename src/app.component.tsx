@@ -30,7 +30,7 @@ const images: ImageRequireSource[] = [
   require('./assets/images/source/image-profile-4.jpg'),
   require('./assets/images/source/image-profile-5.jpg'),
   require('./assets/images/source/image-profile-6.jpg'),
-  require('./assets/images/source/image-profile-7.jpg'),
+  require('./assets/images/source/image-profile-6.jpg'),
   require('./assets/images/source/image-profile-8.jpg'),
   require('./assets/images/source/image-profile-9.jpg'),
   require('./assets/images/source/image-profile-10.jpg'),

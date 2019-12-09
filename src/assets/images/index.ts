@@ -8,10 +8,6 @@ export {
   RemoteImage,
 } from './type';
 
-export const imageSignIn1Bg: ImageSource = {
-  imageSource: require('./source/image-background-sign-in-1.jpg'),
-};
-
 export const imageSignIn3Bg: ImageSource = {
   imageSource: require('./source/image-background-auth-3.jpg'),
 };
@@ -40,9 +36,6 @@ export const imageForgotPasswordBg: ImageSource = {
   imageSource: require('./source/image-background-forgot-password.jpg'),
 };
 
-export const imageProfile7Bg: ImageSource = {
-  imageSource: require('./source/image-background-profile-7.jpg'),
-};
 
 export const imageProfile1: ImageSource = {
   imageSource: require('./source/image-profile-1.jpg'),
@@ -66,10 +59,6 @@ export const imageProfile5: ImageSource = {
 
 export const imageProfile6: ImageSource = {
   imageSource: require('./source/image-profile-6.jpg'),
-};
-
-export const imageProfile7: ImageSource = {
-  imageSource: require('./source/image-profile-7.jpg'),
 };
 
 export const imageProfile8: ImageSource = {
@@ -108,24 +97,8 @@ export const imageFeed1: ImageSource = {
   imageSource: require('./source/image-feed-plant-1.jpg'),
 };
 
-export const imageFeed2: ImageSource = {
-  imageSource: require('./source/image-feed-plant-2.jpg'),
-};
-
-export const imageFeed3: ImageSource = {
-  imageSource: require('./source/image-feed-plant-3.jpg'),
-};
-
 export const imageFeed4: ImageSource = {
   imageSource: require('./source/image-feed-style-1.jpg'),
-};
-
-export const imageFeed5: ImageSource = {
-  imageSource: require('./source/image-feed-style-2.jpg'),
-};
-
-export const imageFeed6: ImageSource = {
-  imageSource: require('./source/image-feed-style-3.jpg'),
 };
 
 export const imageFeed7: ImageSource = {
@@ -335,14 +308,6 @@ export const imageArticle3Bg: ImageSource = {
   imageSource: require('./source/image-article-background-3.jpg'),
 };
 
-export const imageArticle4Bg: ImageSource = {
-  imageSource: require('./source/image-article-background-4.jpg'),
-};
-
-export const imageTraining1Bg: ImageSource = {
-  imageSource: require('./source/image-feed-background-1.jpg'),
-};
-
 export const imageTraining2Bg: ImageSource = {
   imageSource: require('./source/image-feed-background-2.jpg'),
 };
@@ -373,10 +338,6 @@ export const imageExercise5Bg: ImageSource = {
 
 export const imageExercise6Bg: ImageSource = {
   imageSource: require('./source/image-exercise-background-4.jpg'),
-};
-
-export const imageExercise7Bg: ImageSource = {
-  imageSource: require('./source/image-exercise-background-5.jpg'),
 };
 
 export const imageBook: ImageSource = new RemoteImage(

@@ -49,7 +49,7 @@ export class HomeContainer extends React.Component<NavigationStackScreenProps, S
       .then(finalVals => {
         this.setState({
           trendingProducts: finalVals[0].data || [],
-          seenProducts: finalVals[1].data || [],
+          seenProducts: (finalVals[1].data as Product[]).reverse() || [],
           recommendProducts: finalVals[2].data || [],
           monthlyProducts: finalVals[3].data || [],
           saleProducts: finalVals[4].data || [],

@@ -67,7 +67,7 @@ class ProductListItemComponent extends React.Component<ProductListItemProps> {
               style={themedStyle.typeLabel}
               appearance='hint'
               category='c1'>
-              {product.categories_lv1_name}
+              {product.categories_lv3_name}
             </Text>
           </View>
           <View style={themedStyle.priceContainer}>

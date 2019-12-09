@@ -17,13 +17,51 @@ import {
   textStyle,
 } from '@src/components/common';
 import {
-  ClockIconOutline,
   ArrowForwardIconOutline,
 } from '@src/assets/icons';
-import { Exercise } from '@src/core/model/exercise.model';
+import { CateLv1Model } from '../../core/model/category.model';
+import { ImageSource } from '../../assets/images/type';
+
+const cat_lv1_ids = [
+  8, // "Thời trang nữ"
+  94, // "Thời trang nam"
+  138, // "Mẹ và bé"
+  220, // "Sức khỏe & Làm đẹp"
+  528, // "Phụ kiện công nghệ"
+  604, // "Không gian sống"
+  736, // "Thể thao & giải trí"
+  1019, // "Đồ dùng trong nhà"
+  1108, // "Đồ điện gia dụng"
+  1171, // "Thực phẩm"
+  1366, // "Đồng hồ"
+  1458, // "Đồ chơi"
+  1629, // "Phụ kiện thời trang"
+  1663, // "Công nghệ"
+  1686, // "Giày dép"
+  1722, // "Túi xách"
+]
+
+const cat_imgs = {
+  8: {imageSource: require('../../assets/images/8.jpg')} as ImageSource,
+  94: {imageSource: require('../../assets/images/94.jpg')} as ImageSource,
+  138: {imageSource: require('../../assets/images/138.jpg')} as ImageSource,
+  220: {imageSource: require('../../assets/images/220.jpg')} as ImageSource,
+  528: {imageSource: require('../../assets/images/528.jpg')} as ImageSource,
+  604: {imageSource: require('../../assets/images/604.jpg')} as ImageSource,
+  736: {imageSource: require('../../assets/images/736.jpg')} as ImageSource,
+  1019: {imageSource: require('../../assets/images/1019.jpg')} as ImageSource,
+  1108: {imageSource: require('../../assets/images/1108.jpg')} as ImageSource,
+  1171: {imageSource: require('../../assets/images/1171.jpg')} as ImageSource,
+  1366: {imageSource: require('../../assets/images/1366.jpg')} as ImageSource,
+  1458: {imageSource: require('../../assets/images/1458.jpg')} as ImageSource,
+  1629: {imageSource: require('../../assets/images/1629.jpg')} as ImageSource,
+  1663: {imageSource: require('../../assets/images/1663.jpg')} as ImageSource,
+  1686: {imageSource: require('../../assets/images/1686.jpg')} as ImageSource,
+  1722: {imageSource: require('../../assets/images/1722.jpg')} as ImageSource,
+}
 
 interface ComponentProps {
-  training: Exercise;
+  training: CateLv1Model;
   index?: number;
   onDetails: (index: number) => void;
 }
@@ -50,7 +88,7 @@ class TrainingCardComponent extends React.Component<TrainingCardProps> {
         <View style={[themedStyle.container, style]}>
           <ImageBackground
             style={[themedStyle.subContainer, themedStyle.leftSection]}
-            source={training.image.imageSource}
+            source={cat_imgs[training.id_lv1].imageSource}
           />
           <View style={[themedStyle.subContainer, themedStyle.rightSection]}>
             <Text
