@@ -9,6 +9,10 @@ KANTA APP is an e-commerce application focus on recommendation system.
 
 ![](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/home.png)
 
+Expo demo:
+
+![](https://github.com/nhaancs/kanta-react-native/blob/master/src/assets/images/expo-qr-with-icon.png)
+
 
 ## Project Structure
 
